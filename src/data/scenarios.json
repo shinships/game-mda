@@ -1,0 +1,138 @@
+[
+  {
+    "id": "sink_cabinet",
+    "level": 1,
+    "title": "Khoang chậu rửa & Tủ bếp dưới",
+    "zone": "KITCHEN_SINK",
+    "customerDemand": "Gia đình nấu ăn mỗi ngày, khoang bồn rửa hay rò rỉ nước ngầm, yêu cầu độ bền 10 năm không ẩm mốc.",
+    "budgetTier": "STANDARD",
+    "idealCombination": {
+      "core": ["PVC_WPB", "MDF_MOISTURE_RESISTANT"],
+      "surface": ["ACRYLIC", "LAMINATE"],
+      "edge": ["PUR_NOLINE"]
+    },
+    "acceptableCombination": {
+      "core": ["HDF_COMPACT", "PLYWOOD"],
+      "surface": ["MELAMINE"],
+      "edge": ["ALUMINUM_FRAME"]
+    },
+    "technicalRules": {
+      "forbiddenCores": ["MFC_STANDARD"],
+      "forbiddenEffect": "BULGING_EDGES",
+      "warningMessage": "Khoang chậu rửa thường xuyên ẩm ướt, cốt ván dăm thường (MFC) rất dễ hút nước và trương nở mép ván chỉ sau vài tháng.",
+      "perfectExplanation": "Cốt PVC/WPB không hút nước (hoặc MDF lõi xanh chống ẩm) kết hợp nẹp PUR No-line bịt kín mép giúp hạn chế tối đa hơi ẩm xâm nhập vào cốt ván, đủ bền cho khoang chậu rửa sau nhiều năm sử dụng."
+    },
+    "penaltyRules": [
+      {
+        "id": "sink_eva_edge",
+        "when": { "edge": ["EVA_STANDARD"] },
+        "penalty": 20,
+        "visualEffect": "BULGING_EDGES",
+        "message": "Keo EVA thông thường lộ đường line đen và dễ bong mép khi hơi nước bốc lên."
+      },
+      {
+        "id": "sink_veneer_surface",
+        "when": { "surface": ["VENEER"] },
+        "penalty": 20,
+        "visualEffect": "BULGING_EDGES",
+        "message": "Veneer gỗ tự nhiên kỵ ẩm: lớp phủ dễ phồng rộp và bong tróc ở khoang chậu rửa."
+      }
+    ],
+    "expertTip": "Mẹo KTS: bịt kín mọi mép cắt (lỗ khoét chậu, đáy khoang tủ) bằng keo hoặc silicone chống thấm. Nước luôn tìm đường vào mép ván trước tiên."
+  },
+  {
+    "id": "kids_bedroom",
+    "level": 2,
+    "title": "Bàn học & Tủ quần áo phòng ngủ trẻ em",
+    "zone": "BEDROOM_KIDS",
+    "customerDemand": "Phòng ngủ kín bật điều hòa, bé hiếu động hay vẽ bẩn, cần vật liệu phát thải thấp, không cay mắt. Gia đình muốn ngân sách vừa phải vì phòng trẻ sẽ đổi công năng sau vài năm.",
+    "budgetTier": "BUDGET",
+    "idealCombination": {
+      "core": ["MDF_MOISTURE_RESISTANT"],
+      "surface": ["MELAMINE", "LAMINATE"],
+      "edge": ["PUR_NOLINE", "EVA_STANDARD"]
+    },
+    "acceptableCombination": {
+      "core": ["HDF_COMPACT", "PLYWOOD", "PVC_WPB"],
+      "surface": [],
+      "edge": []
+    },
+    "technicalRules": {
+      "forbiddenCores": [],
+      "perfectExplanation": "MDF lõi xanh đạt chuẩn phát thải thấp (E1/CARB P2) cùng bề mặt Melamine hoặc Laminate dễ lau chùi giúp phòng ngủ của bé an toàn hơn cho hệ hô hấp, lại bền với nét vẽ và va quẹt hằng ngày."
+    },
+    "penaltyRules": [
+      {
+        "id": "kids_mfc_core",
+        "when": { "core": ["MFC_STANDARD"] },
+        "penalty": 10,
+        "visualEffect": "SCRATCHED",
+        "message": "Ván dăm MFC thường có mép dễ sứt mẻ và khó kiểm soát mức phát thải Formaldehyde nếu không có chứng nhận E1, chưa phải lựa chọn an tâm cho phòng ngủ kín của bé."
+      },
+      {
+        "id": "kids_acrylic_surface",
+        "when": { "surface": ["ACRYLIC"] },
+        "penalty": 15,
+        "visualEffect": "SCRATCHED",
+        "message": "Acrylic bóng dễ lộ vết xước và dấu vẽ bẩn của trẻ, khó bảo trì hơn Melamine hoặc Laminate."
+      },
+      {
+        "id": "kids_veneer_surface",
+        "when": { "surface": ["VENEER"] },
+        "penalty": 10,
+        "visualEffect": "SCRATCHED",
+        "message": "Veneer gỗ thật khó chùi vết bút màu và dễ xước, lại đội chi phí không cần thiết cho phòng trẻ."
+      },
+      {
+        "id": "kids_alu_edge",
+        "when": { "edge": ["ALUMINUM_FRAME"] },
+        "penalty": 10,
+        "visualEffect": "SCRATCHED",
+        "message": "Viền nhôm có cạnh cứng, va chạm dễ gây trầy xước và đau cho bé."
+      }
+    ],
+    "expertTip": "Mẹo KTS: hãy xin phiếu chứng nhận E1/CARB P2 của đúng lô ván. Màu lõi xanh chỉ cho biết ván có phụ gia chống ẩm, không thay cho chứng nhận phát thải.",
+    "budgetNote": "Phòng trẻ thay đổi công năng sau vài năm. Hãy dồn ngân sách vào độ an toàn (cốt E1) và bề mặt dễ lau chùi thay vì vật liệu cao cấp khó phát huy giá trị."
+  },
+  {
+    "id": "living_wall",
+    "level": 3,
+    "title": "Vách TV phòng khách",
+    "zone": "LIVING_WALL",
+    "customerDemand": "Vách ốp TV dài khoảng 3m ở phòng khách chung cư. Khách muốn bề mặt phẳng, đều màu, nhìn liền khối và sang trọng. TV chạy nhiều giờ mỗi ngày nên khu vực này tỏa nhiệt. Khách sẵn sàng đầu tư để đẹp và bền theo thời gian.",
+    "budgetTier": "PREMIUM",
+    "idealCombination": {
+      "core": ["HDF_COMPACT", "MDF_MOISTURE_RESISTANT"],
+      "surface": ["VENEER", "ACRYLIC"],
+      "edge": ["PUR_NOLINE"]
+    },
+    "acceptableCombination": {
+      "core": ["PLYWOOD", "PVC_WPB"],
+      "surface": ["LAMINATE"],
+      "edge": ["ALUMINUM_FRAME"]
+    },
+    "technicalRules": {
+      "forbiddenCores": ["MFC_STANDARD"],
+      "forbiddenEffect": "WARPING",
+      "warningMessage": "Vách TV dài 3m cần cốt phẳng và đủ cứng. Ván dăm MFC dễ võng giữa nhịp, cong vênh và khó ốp Acrylic hay Veneer phẳng mịn.",
+      "perfectExplanation": "Cốt HDF siêu nén hoặc MDF lõi xanh cho mặt phẳng mịn, ổn định trên nhịp dài. Hoàn thiện Veneer hoặc Acrylic cùng nẹp PUR No-line cho vách liền khối, sang trọng và bền màu."
+    },
+    "penaltyRules": [
+      {
+        "id": "wall_pvc_thermal",
+        "when": { "core": ["PVC_WPB"] },
+        "penalty": 10,
+        "visualEffect": "WARPING",
+        "message": "Tấm PVC/WPB giãn nở nhiệt nhiều hơn ván gỗ. Vách TV dài 3m ở nơi tỏa nhiệt dễ nhấp nhô, cong vênh nếu không chừa khe giãn nở."
+      },
+      {
+        "id": "wall_eva_line",
+        "when": { "edge": ["EVA_STANDARD"] },
+        "penalty": 5,
+        "visualEffect": "SCRATCHED",
+        "message": "Đường keo EVA lộ viền tối trên vách nhìn thẳng, làm mất cảm giác liền khối của không gian cao cấp."
+      }
+    ],
+    "expertTip": "Mẹo KTS: vách dài trên 2,4m nên chia tấm hợp lý và chừa khe giãn nở ở vị trí TV, đèn tỏa nhiệt để hạn chế cong vênh."
+  }
+]
