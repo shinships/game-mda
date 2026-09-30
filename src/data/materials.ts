@@ -5,13 +5,13 @@ import type { MaterialId, MaterialOption, SlotKey, TagTone } from "@/types/game"
  * Nội dung kỹ thuật cần KTS/sale duyệt lại: xem docs/content-review.md.
  */
 
-/** Mã màu tag (spec 4.1). Codex dùng trực tiếp, không hard-code lại. */
+/** Mã màu tag (spec 4.1). Chữ đã làm đậm hơn spec để đạt tương phản WCAG ≥ 4.5:1 trên nền tag. Codex dùng trực tiếp, không hard-code lại. */
 export const TAG_TONES: Record<TagTone, { bg: string; text: string }> = {
   green: { bg: "#E8F5E9", text: "#2E7D32" }, // MDF lõi xanh
-  orange: { bg: "#FFF3E0", text: "#E65100" }, // Ván dăm thường
-  blue: { bg: "#E1F5FE", text: "#0277BD" }, // PVC/WPB
+  orange: { bg: "#FFF3E0", text: "#BF360C" }, // Ván dăm thường
+  blue: { bg: "#E1F5FE", text: "#01579B" }, // PVC/WPB
   slate: { bg: "#ECEFF1", text: "#455A64" }, // HDF
-  sand: { bg: "#F5EFE6", text: "#8A6D3B" }, // Plywood, bề mặt, nẹp
+  sand: { bg: "#F5EFE6", text: "#6F5427" }, // Plywood, bề mặt, nẹp
 };
 
 const CORES: MaterialOption<"core">[] = [

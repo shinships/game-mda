@@ -73,11 +73,17 @@ MD Architects (Nội thất Minh Đức) cần mini-game trên landing page đ�
 - [x] T6.2 `npx vitest run`, `npx tsc --noEmit`, `npm run build` sạch.
 - [x] T6.3 `npm run dev` + `curl POST /api/lead`: payload hợp lệ, honeypot, SĐT sai, điểm giả mạo → server vẫn trả voucher theo điểm tự chấm; kiểm log mock.
 
-## Phase 7 — UI  *(Codex — ngoài phạm vi thực thi của Claude, chỉ ghi trong AGENTS.md)*
-- Landing: `HeroBanner`, `TrustSection`.
-- Game: `GameContainer`, `OrderTicket`, `MaterialWorkbench`, `VisualPreview` (mặt cắt 3 lớp + stress test), `ResultSheet`.
-- Lead: `LeadCaptureForm` (RHF + schema từ `src/lib/validation/lead.ts`), `VoucherSuccess` (mã + nút Zalo OA).
-- Gắn Meta Pixel / GA4 script trong `layout.tsx`.
+## Phase 7 — UI  *(Codex — hoàn thành 2026-09-30)*
+- [x] Landing: `HeroBanner`, `TrustSection`; minh họa mặt cắt SVG, không dùng tên thương hiệu chưa được xác nhận.
+- [x] Game: `GameContainer`, `OrderTicket`, `MaterialWorkbench`, `VisualPreview`, `ResultSheet`; tổng kết rank và điểm từng màn.
+- [x] Đọc store qua selector ổn định; gọi `useGameHydrated()` một lần; stress-test tự gọi `finishTest()` sau 2,2s (250ms khi giảm chuyển động).
+- [x] Lead: `LeadCaptureForm` (RHF + schema dùng chung), `VoucherSuccess` (voucher/rank từ server, copy mã, Zalo khi có URL).
+- [x] `page.tsx`, `layout.tsx`, `globals.css`: tiếng Việt, Playfair Display + Plus Jakarta Sans, Meta Pixel / GA4 qua `next/script` khi ID được cấu hình.
+- [x] Responsive 375px / 1280px; radio dùng phím mũi tên; focus trap, Esc và mở lại kết quả; vùng nội dung sheet cuộn riêng, CTA luôn hiển thị; hỗ trợ `prefers-reduced-motion`.
+- [x] `npm run lint`, `npm run typecheck`, `npm test` (205 test), `npm run build` sạch.
+- [x] Kiểm tra trình duyệt: 3 màn FAIL (0/0/0, đủ phồng mép/trầy/cong) và PERFECT (100/100/100); lưu/khôi phục lựa chọn sau reload; lỗi field, honeypot, submit khóa input, lỗi 503 và retry giữ form, voucher 1tr/5tr, copy mã; ẩn Zalo khi URL null.
+
+Ghi chú bàn giao: lead thử bằng API mock local; lỗi 503 mô phỏng qua proxy tạm ngoài repo. Chưa cấu hình ID tracking hay webhook thật. Nội dung kỹ thuật, thương hiệu, điều kiện voucher và link cẩm nang vẫn cần duyệt theo `docs/content-review.md`; không đánh dấu thay người duyệt. Màu chữ tag được tăng tương phản từ `TAG_TONES`, yêu cầu cân chỉnh token gốc ghi ở `docs/requests.md`. Build cần quyền mạng để tải Google Fonts; đã xác minh bản production thành công.
 
 ---
 

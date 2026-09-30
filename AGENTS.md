@@ -44,10 +44,10 @@ Phong cách: *Architectural Editorial / Warm Minimalist* — nhiều khoảng tr
 | `tagTone` | Nền | Chữ | Dùng cho |
 |---|---|---|---|
 | `green` | `#E8F5E9` | `#2E7D32` | MDF lõi xanh |
-| `orange` | `#FFF3E0` | `#E65100` | MFC (ván dăm thường) |
-| `blue` | `#E1F5FE` | `#0277BD` | PVC/WPB |
+| `orange` | `#FFF3E0` | `#BF360C` | MFC (ván dăm thường) |
+| `blue` | `#E1F5FE` | `#01579B` | PVC/WPB |
 | `slate` | `#ECEFF1` | `#455A64` | HDF |
-| `sand` | `#F5EFE6` | `#8A6D3B` | Plywood, bề mặt, nẹp |
+| `sand` | `#F5EFE6` | `#6F5427` | Plywood, bề mặt, nẹp |
 
 ## 4. Component cần dựng (spec 4.2)
 
@@ -205,12 +205,22 @@ LeadErrorResponse   = { ok: false, error: "VALIDATION" | "INCOMPLETE_SELECTIONS"
 
 ## 7. Checklist bàn giao UI
 
-- [ ] Chạy mượt ở **375px** (iPhone SE/mini), không scroll ngang; tap target ≥ 44px; bottom-sheet không che nút chính.
-- [ ] Không layout shift khi đổi màn / khi ResultSheet mở (đặt chiều cao tối thiểu, dùng `next/font`, `next/image` có kích thước).
-- [ ] A11y cơ bản: focus ring rõ, `aria-live="polite"` cho kết quả, modal có focus trap + đóng bằng Esc, tương phản chữ ≥ 4.5:1, `prefers-reduced-motion`.
-- [ ] Mọi tracking đi qua store (`game_start`, `level_complete`, `game_complete`, `Lead`) — component **không** gọi `fbq`/`gtag` trực tiếp.
-- [ ] `layout.tsx`: đổi `lang="en"` → `lang="vi"`, thay metadata mặc định của create-next-app bằng title/description tiếng Việt, nạp font Playfair Display + Plus Jakarta Sans.
-- [ ] Meta Pixel & GA4 gắn trong `layout.tsx` bằng `next/script` (`NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_GA_ID`); bỏ qua nếu thiếu biến.
-- [ ] Form: hiện lỗi từng field (message từ Zod), honeypot ẩn, nút submit disable khi `SUBMITTING`, hiện `submitError` khi `SUBMIT_ERROR`.
-- [ ] Copy tiếng Việt lấy từ dữ liệu/`feedback` của engine; không tự thêm cam kết tuyệt đối.
-- [ ] `npm run lint`, `npx tsc --noEmit`, `npm run build` sạch; chạy thử đủ luồng 3 màn ở cả hai kết quả (FAIL & PERFECT).
+- [x] Chạy mượt ở **375px** (iPhone SE/mini), không scroll ngang; tap target ≥ 44px; bottom-sheet không che nút chính.
+- [x] Không layout shift khi đổi màn / khi ResultSheet mở (đặt chiều cao tối thiểu, dùng `next/font`, `next/image` có kích thước).
+- [x] A11y cơ bản: focus ring rõ, `aria-live="polite"` cho kết quả, modal có focus trap + đóng bằng Esc, tương phản chữ ≥ 4.5:1, `prefers-reduced-motion`.
+- [x] Mọi tracking đi qua store (`game_start`, `level_complete`, `game_complete`, `Lead`) — component **không** gọi `fbq`/`gtag` trực tiếp.
+- [x] `layout.tsx`: đổi `lang="en"` → `lang="vi"`, thay metadata mặc định của create-next-app bằng title/description tiếng Việt, nạp font Playfair Display + Plus Jakarta Sans.
+- [x] Meta Pixel & GA4 gắn trong `layout.tsx` bằng `next/script` (`NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_GA_ID`); bỏ qua nếu thiếu biến.
+- [x] Form: hiện lỗi từng field (message từ Zod), honeypot ẩn, nút submit disable khi `SUBMITTING`, hiện `submitError` khi `SUBMIT_ERROR`.
+- [x] Copy tiếng Việt lấy từ dữ liệu/`feedback` của engine; không tự thêm cam kết tuyệt đối.
+- [x] `npm run lint`, `npx tsc --noEmit`, `npm run build` sạch; chạy thử đủ luồng 3 màn ở cả hai kết quả (FAIL & PERFECT).
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

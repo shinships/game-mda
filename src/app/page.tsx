@@ -1,11 +1,31 @@
-// Placeholder tối giản để build chạy được. Codex sẽ thay thế bằng HeroBanner + GameContainer (Phase 7).
+import { GameContainer } from "@/components/game/GameContainer";
+import { TrustSection } from "@/components/landing/TrustSection";
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-screen max-w-xl flex-col items-center justify-center gap-3 px-6 text-center">
-      <h1 className="font-serif text-3xl">Xưởng Phối Vật Liệu Nội Thất</h1>
-      <p className="text-sm text-neutral-600">
-        Logic game &amp; API đã sẵn sàng. Giao diện đang chờ Codex (xem AGENTS.md).
-      </p>
-    </main>
+    <>
+      <header className="site-header page-width">
+        <Link className="brand" href="/" aria-label="MD Architects — Trang chủ">
+          <span className="brand-mark" aria-hidden="true">
+            md<span>.</span>
+          </span>
+          <span className="brand-name">
+            MD ARCHITECTS<small>NỘI THẤT MINH ĐỨC</small>
+          </span>
+        </Link>
+        <a className="header-link" href="#cach-choi">
+          Khám phá vật liệu <span aria-hidden="true">↗</span>
+        </a>
+      </header>
+      <main id="noi-dung">
+        <GameContainer />
+        <TrustSection />
+      </main>
+      <footer className="site-footer page-width">
+        <span>© MD Architects · Nội thất Minh Đức</span>
+        <span>Hiểu vật liệu. Chọn đúng cho tổ ấm.</span>
+      </footer>
+    </>
   );
 }
